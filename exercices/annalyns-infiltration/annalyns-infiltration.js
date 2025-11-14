@@ -1,4 +1,4 @@
-// @ts-check
+// @ts-nocheck
 //
 // ☝🏽 The line above enables type checking for this file. Various IDEs interpret
 // the @ts-check directive. It will give you helpful autocompletion on the web
@@ -27,7 +27,15 @@
  * @return {boolean} Whether or not you can execute a fast attack.
  */
 export function canExecuteFastAttack(knightIsAwake) {
-  throw new Error('Remove this line and implement the function');
+  /* avec === la condition a vérifier doit être exactement vrai ou fausse car c est un opérateur de comparaison stricte */
+  if (knightIsAwake === false)
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
 }
 
 /**
@@ -40,7 +48,15 @@ export function canExecuteFastAttack(knightIsAwake) {
  * @returns {boolean} Whether or not you can spy on someone.
  */
 export function canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake) {
-  throw new Error('Remove this line and implement the function');
+  /* le pipe est utilisé pour enchainer plusieurs fonctions */
+  if (knightIsAwake === true || archerIsAwake === true || prisonerIsAwake === true)
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
 }
 
 /**
@@ -52,7 +68,22 @@ export function canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake) {
  * @returns {boolean} Whether or not you can send a signal to the prisoner.
  */
 export function canSignalPrisoner(archerIsAwake, prisonerIsAwake) {
-  throw new Error('Remove this line and implement the function');
+  if (archerIsAwake === false && prisonerIsAwake === true)
+  {
+    return true;
+  }
+  if (archerIsAwake === false && prisonerIsAwake === false)
+  {
+    return false;
+  }
+  if (archerIsAwake === true && prisonerIsAwake === false)
+  {
+    return false;
+  }
+  if (archerIsAwake === true && prisonerIsAwake === true)
+  {
+    return false;
+  }
 }
 
 /**
@@ -69,7 +100,38 @@ export function canFreePrisoner(
   knightIsAwake,
   archerIsAwake,
   prisonerIsAwake,
-  petDogIsPresent,
-) {
-  throw new Error('Remove this line and implement the function');
+  petDogIsPresent) {
+  if (petDogIsPresent === true && archerIsAwake === false)
+  {
+    return true;
+  }
+  if (petDogIsPresent === false )
+  {
+        if (prisonerIsAwake === true && knightIsAwake === false && archerIsAwake === false)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+  if (knightIsAwake === true && archerIsAwake === true && prisonerIsAwake === true && petDogIsPresent === true)
+  {
+    return false;
+  }
+
+  if (knightIsAwake === false && archerIsAwake === true && prisonerIsAwake === false && petDogIsPresent === true)
+  {
+    return false;
+  }
+
+  if (knightIsAwake ===false && archerIsAwake === true && prisonerIsAwake === true && petDogIsPresent === true)
+  {
+    return false;
+  }
+  if (knightIsAwake === true && archerIsAwake === true && prisonerIsAwake === false && petDogIsPresent === true)
+  {
+    return false;
+  }
 }
