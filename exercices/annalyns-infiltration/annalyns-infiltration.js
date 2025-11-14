@@ -49,14 +49,8 @@ export function canExecuteFastAttack(knightIsAwake) {
  */
 export function canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake) {
   /* le pipe est utilisé pour enchainer plusieurs fonctions */
-  if (knightIsAwake === true || archerIsAwake === true || prisonerIsAwake === true)
-  {
-    return true;
-  }
-  else
-  {
-    return false;
-  }
+  return (knightIsAwake === true || archerIsAwake === true || prisonerIsAwake === true)
+
 }
 
 /**
@@ -68,22 +62,7 @@ export function canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake) {
  * @returns {boolean} Whether or not you can send a signal to the prisoner.
  */
 export function canSignalPrisoner(archerIsAwake, prisonerIsAwake) {
-  if (archerIsAwake === false && prisonerIsAwake === true)
-  {
-    return true;
-  }
-  if (archerIsAwake === false && prisonerIsAwake === false)
-  {
-    return false;
-  }
-  if (archerIsAwake === true && prisonerIsAwake === false)
-  {
-    return false;
-  }
-  if (archerIsAwake === true && prisonerIsAwake === true)
-  {
-    return false;
-  }
+  return (!archerIsAwake && prisonerIsAwake) 
 }
 
 /**
