@@ -49,7 +49,7 @@ export function canExecuteFastAttack(knightIsAwake) {
  */
 export function canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake) {
   /* le pipe est utilisé pour enchainer plusieurs fonctions */
-  return (knightIsAwake === true || archerIsAwake === true || prisonerIsAwake === true)
+  return (knightIsAwake || archerIsAwake || prisonerIsAwake)
 
 }
 
@@ -80,37 +80,12 @@ export function canFreePrisoner(
   archerIsAwake,
   prisonerIsAwake,
   petDogIsPresent) {
-  if (petDogIsPresent === true && archerIsAwake === false)
-  {
-    return true;
-  }
-  if (petDogIsPresent === false )
-  {
-        if (prisonerIsAwake === true && knightIsAwake === false && archerIsAwake === false)
-    {
-      return true;
-    }
-    else
-    {
-      return false;
-    }
-  }
-  if (knightIsAwake === true && archerIsAwake === true && prisonerIsAwake === true && petDogIsPresent === true)
-  {
-    return false;
-  }
+    // crée une consctante accessible uniquement en lecture
+    // chien présent et archer dort
+  const dogFreePrisoner = petDogIsPresent && !archerIsAwake ;
+  
+    // pas de chien, prisonier reveillé, les autres dorment
+    const noDogForFree = !petDogIsPresent && prisonerIsAwake && !knightIsAwake && !archerIsAwake ;
 
-  if (knightIsAwake === false && archerIsAwake === true && prisonerIsAwake === false && petDogIsPresent === true)
-  {
-    return false;
-  }
-
-  if (knightIsAwake ===false && archerIsAwake === true && prisonerIsAwake === true && petDogIsPresent === true)
-  {
-    return false;
-  }
-  if (knightIsAwake === true && archerIsAwake === true && prisonerIsAwake === false && petDogIsPresent === true)
-  {
-    return false;
-  }
+    return dogFreePrisoner || noDogForFree;
 }

@@ -1,1 +1,74 @@
-[]
+[
+  {
+    "id": "41d260d7-7d29-46d6-a54b-c2758db3bf55",
+    "type": "commitless",
+    "name": "Camille Rais",
+    "description": "Installation et mise en place de l'environnement de travail, aide de mon professeur concernant le fonctionnement des programmes.\r\nexplication concernant les objectif du projet",
+    "date": "2025-11-14T11:35:00.000Z",
+    "duration": 45,
+    "status": "Done"
+  },
+  {
+    "id": "c3f8b0b3-3357-4130-93fb-044cc46d2dc4",
+    "type": "commitless",
+    "name": "Camille Rais",
+    "description": "Absence pour maladie",
+    "date": "2025-11-07T11:20:00.000Z",
+    "duration": 225,
+    "status": "Done"
+  },
+  {
+    "id": "0712a52d-00ef-444b-9067-bd810f0fcac3",
+    "type": "commitless",
+    "name": "Camille Rais",
+    "description": "Explication concernant les test et de la commande npm run test",
+    "date": "2025-11-14T12:20:00.000Z",
+    "duration": 20,
+    "status": "Done"
+  },
+  {
+    "id": "fee1f6d4-fb55-4df8-90d0-053e64b4ed26",
+    "type": "commitless",
+    "name": "Camille Rais",
+    "description": "Execice Hello World",
+    "date": "2025-11-14T12:40:00.000Z",
+    "duration": 10,
+    "status": "Done"
+  },
+  {
+    "id": "41f59068-024f-4b2d-9805-441f419e97be",
+    "type": "commitless",
+    "name": "Camille Rais",
+    "description": "Exercice Lasagna, test pas passée 2 fois. Reussi la 3ème fois",
+    "date": "2025-11-14T12:50:00.000Z",
+    "duration": 50,
+    "status": "Done"
+  },
+  {
+    "id": "f79f205b-ea67-4e4a-99e6-bcf58976bfaa",
+    "type": "commitless",
+    "name": "Camille Rais",
+    "description": "Exercice annalyns-infiltration\r\ntest reussi après environ 10 correction de code.",
+    "date": "2025-11-14T14:00:00.000Z",
+    "duration": 60,
+    "status": "Done"
+  },
+  {
+    "id": "507137f8-226f-48ac-b430-824746bb7817",
+    "type": "commitless",
+    "name": "Camille Rais",
+    "description": "exercice freelancer-rates\r\nenviron 12 test avant de pouvoir valider le code",
+    "date": "2025-11-14T14:50:00.000Z",
+    "duration": 50,
+    "status": "Done"
+  },
+  {
+    "id": "2ea087b3-65a9-4e01-9746-2f31e3e1d95d",
+    "type": "commitless",
+    "name": "Camille Rais",
+    "description": "Retour de mon professeur concernant l'exercice annalyns-infiltration\r\nil faut simplifier le code, éviter la redondance et ne pas écrire des lignes qui disent la même chose que cela fait déjà",
+    "date": "2025-11-14T15:10:00.000Z",
+    "duration": 0,
+    "status": "Done"
+  }
+]
