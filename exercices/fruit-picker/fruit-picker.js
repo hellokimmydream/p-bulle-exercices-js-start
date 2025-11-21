@@ -12,18 +12,25 @@
 import { notify } from './notifier';
 import { order } from './grocer';
 
+
+
 /**
  * @return void
  */
-export function onSuccess() {
+export function onSuccess(message) {
   // implement the onSuccess callback to call notify with a success message
+
+  message(notify);
 }
+
 
 /**
  * @return void
  */
 export function onError() {
   // implement the onError callback to call notify with an error message
+
+  notify(message);
 }
 
 /**
@@ -34,6 +41,10 @@ export function onError() {
  */
 export function orderFromGrocer(query, onSuccessCallback, onErrorCallback) {
   // implement the orderFromGrocer function to order the query
+  if (onSuccessCallback && !onErrorCallback)
+  {
+    return 
+  }
 }
 
 /**
