@@ -27,7 +27,7 @@
  * @returns {string}
  */
 export function frontDoorResponse(line) {
-  throw new Error('Remove this line and implement the function');
+return line[0];
 }
 
 /**
@@ -37,9 +37,18 @@ export function frontDoorResponse(line) {
  * @param {string} word the letters you responded with before
  * @returns {string} the front door password
  */
-export function frontDoorPassword(word) {
-  throw new Error('Remove this line and implement the function');
-}
+export function frontDoorPassword(word) 
+  {
+    if (!word){
+      return '';
+    }
+
+    const actualLetters = word[0].toUpperCase () ;
+    // utilisation de .slice : permet d'extraire une portion d'une chaine de caractère ou tableau sans modif de l'original et retourn nouvelle instance
+    const expectedLetters = word.slice(1).toLowerCase() ;
+
+    return actualLetters + expectedLetters ;
+  }
 
 /**
  * Respond with the correct character, given the line of the
@@ -49,7 +58,11 @@ export function frontDoorPassword(word) {
  * @returns {string}
  */
 export function backDoorResponse(line) {
-  throw new Error('Remove this line and implement the function');
+  // enlever les espace au début et a la fin
+  // utilisation de Trim() qui supprime les espace des 2 côtés
+  const noSpace = line.trim();
+
+  return noSpace[noSpace.length -1];
 }
 
 /**
@@ -60,5 +73,6 @@ export function backDoorResponse(line) {
  * @returns {string} the back door password
  */
 export function backDoorPassword(word) {
-  throw new Error('Remove this line and implement the function');
+  
+  return frontDoorPassword(word) + ', please' ;
 }
