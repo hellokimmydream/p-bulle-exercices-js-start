@@ -5,29 +5,86 @@
 
 export class BankAccount {
   constructor() {
-    throw new Error('Remove this line and implement the function');
+    this._balance = 0;
+
+    // false car pas ouvert
+    this._isOpen = false;
   }
+
 
   open() {
-    throw new Error('Remove this line and implement the function');
+    if (this._isOpen)
+    {
+      throw new ValueError();
+    }
+    this._isOpen = true;
+    this._balance = 0;
   }
+
 
   close() {
-    throw new Error('Remove this line and implement the function');
+    // si un compte est fermé sans etre ouvert ou deja fermé = error
+    if (!this._isOpen)
+    {
+      throw new ValueError();
+    }
+    this._isOpen = false;
   }
 
-  deposit() {
-    throw new Error('Remove this line and implement the function');
+
+  deposit(amount) {
+        if (!this._isOpen)
+    {
+      throw new ValueError();
+    }
+
+        if (amount <= 0)
+    {
+      throw new ValueError();
+    }
+
+    this._balance += amount;
   }
 
-  withdraw() {
-    throw new Error('Remove this line and implement the function');
+
+  withdraw(amount) {
+          if (!this._isOpen)
+    {
+      throw new ValueError();
+    }
+
+        if (amount <= 0)
+    {
+      throw new ValueError();
+    }
+
+          if (amount > this._balance)
+    {
+      throw new ValueError();
+    }
+
+    this._balance -= amount;
   }
+
 
   get balance() {
-    throw new Error('Remove this line and implement the function');
+        if (!this._isOpen)
+    {
+      throw new ValueError();
+    }
+
+    return this._balance;
+  }
+
+
+  // lance une erreur sinon test passe pas
+  set balance(_)
+  {
+    throw new Error('Balance cannot be set directly');
+    
   }
 }
+
 
 export class ValueError extends Error {
   constructor() {
