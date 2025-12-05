@@ -11,7 +11,13 @@
  * @returns {number} total bird count
  */
 export function totalBirdCount(birdsPerDay) {
-  throw new Error('Remove this line and implement the function');
+  let totalBird = 0 ; 
+
+  for (let i = 0 ; i < birdsPerDay.length; i++){
+    totalBird = totalBird + birdsPerDay[i];
+  }
+
+  return totalBird;
 }
 
 /**
@@ -22,7 +28,12 @@ export function totalBirdCount(birdsPerDay) {
  * @returns {number} birds counted in the given week
  */
 export function birdsInWeek(birdsPerDay, week) {
-  throw new Error('Remove this line and implement the function');
+  let totalBirdInWeek = 0;
+for (let 1 = 0; 1 = somethings; i++){
+
+  // code
+}
+return somethings;
 }
 
 /**
