@@ -3,6 +3,9 @@
 // convenience to get you started writing code faster.
 //
 
-export const gigasecond = () => {
-  throw new Error('Remove this line and implement the function');
+export const gigasecond = (date) => {
+
+   // crée une nouvelle date a partir de date
+   // getDate retourne un nombre milliseconde écoulee despuis une date = date + 1 gigaseconde = cree une date
+  return new Date(date.getTime() + 1000000000000);
 };
