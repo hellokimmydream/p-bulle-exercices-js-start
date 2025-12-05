@@ -1,36 +1,86 @@
-//
-// This is only a SKELETON file for the 'Bank Account' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
 
-export class BankAccount {
-  constructor() {
-    throw new Error('Remove this line and implement the function');
+export class BankAccount{
+  constructor(){
+    this.accountStatus = false;
   }
 
-  open() {
-    throw new Error('Remove this line and implement the function');
+  open(){
+    if(this.accountStatus == false){
+      this.accountStatus = true; 
+      this.accountBalance = 0;
+    }
+    
+    else{
+      throw new ValueError("This account is opened.");
+    }
   }
 
-  close() {
-    throw new Error('Remove this line and implement the function');
+
+  close(){
+    if(this.accountStatus == true){
+      this.accountStatus = false; 
+      this.accountBalance = null;
+    }
+    else{
+      throw new ValueError("This account is closed.");
+    }
   }
 
-  deposit() {
-    throw new Error('Remove this line and implement the function');
+
+  deposit(value){
+    if(this.accountStatus == true){
+      if(value >= 0){
+        this.accountBalance += value;
+      }
+      
+      else{
+        throw new ValueError("Deposit money cannot be negative.");
+      }
+    }
+    else{
+      throw new ValueError("This account is closed.");
+    }
   }
 
-  withdraw() {
-    throw new Error('Remove this line and implement the function');
+
+  withdraw(value){
+    if(this.accountStatus == true){
+      
+      if(value >= 0){
+        if((this.accountBalance - value) >= 0){
+          this.accountBalance -= value;
+        }
+        
+        else{
+          throw new ValueError("Not enaugh money.");
+        }
+      }
+      
+      else{
+        throw new ValueError("Withdraw money cannot be negative.");
+      }
+    }
+    
+    else{
+      throw new ValueError("This account is closed.");
+    }
   }
 
-  get balance() {
-    throw new Error('Remove this line and implement the function');
+
+  get balance(){
+    if(this.accountStatus == true){
+      return this.accountBalance;
+    }
+    
+    else{
+      throw new ValueError("This account is closed.");
+    }
   }
 }
 
-export class ValueError extends Error {
-  constructor() {
+
+export class ValueError extends Error{
+  constructor(){
     super('Bank account error');
   }
 }
