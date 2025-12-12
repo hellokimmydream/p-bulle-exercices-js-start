@@ -10,17 +10,15 @@
  */
 export function cardTypeCheck(stack, card) {
   // 🚨 Use .forEach
-  let counter = 0 ; 
+  let counter = 0;
 
   // call stack pour une pile d'exécution : gére l ordre d'exécution des fonctions
   // appel et ajoute a la pile, appel et ajoute a la pile, etc.... UNE SEULE PILE D EXECUTION A LA FOIS
-  stack.forEach ((number) => {
-
-    if (number === card)
-    {
+  stack.forEach((number) => {
+    if (number === card) {
       counter++;
     }
-  } )
+  });
   return counter;
 }
 
@@ -35,17 +33,16 @@ export function determineOddEvenCards(stack, type) {
   // 🚨 Use a `for...of` loop
 
   // ? condense le if else
-    // condition ? valeurSiVrai : valeurSiFaux
-  const rest = type ? 0 : 1
+  // condition ? valeurSiVrai : valeurSiFaux
+  const rest = type ? 0 : 1;
 
-  let count = 0
+  let count = 0;
 
   // for of parcourt directement les valeurs : const VARIABLE of ITERABLE donc variable prend directement la valeur de itérable
   // % divise par 2
   for (const card of stack) {
-    if (card % 2 === rest)
-    {
-      count += 1
+    if (card % 2 === rest) {
+      count += 1;
     }
   }
 
