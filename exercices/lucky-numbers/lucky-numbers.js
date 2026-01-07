@@ -1,33 +1,52 @@
 // @ts-check
 
-/**
- * Calculates the sum of the two input arrays.
- *
- * @param {number[]} array1
- * @param {number[]} array2
- * @returns {number} sum of the two arrays
- */
+// transforme un tableau de chiffres en nombre
+function digitsToNumber(digits) {
+  return Number(digits.join(""));
+}
+
+// addition de deux tableaux représentant des nombres
 export function twoSum(array1, array2) {
-  throw new Error('Remove this line and implement the function');
+  let i = array1.length - 1;
+  let j = array2.length - 1;
+  let carry = 0;
+  const result = [];
+
+  while (i >= 0 || j >= 0 || carry > 0) {
+    const d1 = i >= 0 ? array1[i] : 0;
+    const d2 = j >= 0 ? array2[j] : 0;
+
+    const sum = d1 + d2 + carry;
+    result.unshift(sum % 10);
+    carry = Math.floor(sum / 10);
+
+    i--;
+    j--;
+  }
+
+  return digitsToNumber(result);
 }
 
-/**
- * Checks whether a number is a palindrome.
- *
- * @param {number} value
- * @returns {boolean} whether the number is a palindrome or not
- */
+// vérifie si un nombre est un palindrome
 export function luckyNumber(value) {
-  throw new Error('Remove this line and implement the function');
+  const str = String(value);
+  return str === str.split("").reverse().join("");
 }
 
-/**
- * Determines the error message that should be shown to the user
- * for the given input value.
- *
- * @param {string|null|undefined} input
- * @returns {string} error message
- */
+// retourne le message d’erreur selon l’input
 export function errorMessage(input) {
-  throw new Error('Remove this line and implement the function');
+  // champ vide
+  if (input === "" || input === null || input === undefined) {
+    return "Required field";
+  }
+
+  const trimmed = input.trim();
+  const number = Number(trimmed);
+
+  // pas un nombre valide ou égal à 0
+  if (Number.isNaN(number) || number === 0) {
+    return "Must be a number besides 0";
+  }
+
+  return "";
 }
