@@ -196,5 +196,23 @@
     "date": "2025-12-22T10:34:00.000Z",
     "duration": 0,
     "status": "Done"
+  },
+  {
+    "id": "2c67b830-d5a3-409a-bd91-70e553308528",
+    "type": "commitless",
+    "name": "feat(exercice terminé)",
+    "description": "nullability fait en rattrapage a la maison",
+    "date": "2025-12-28T12:29:00.000Z",
+    "duration": 75,
+    "status": "Done"
+  },
+  {
+    "id": "73e5db5e-d17a-46a8-92ba-4c4ffb522039",
+    "type": "commitless",
+    "name": "feat(exercice terminé)",
+    "description": "mixed juice rattrapage a la maison",
+    "date": "2025-12-28T12:33:00.000Z",
+    "duration": 65,
+    "status": "Done"
   }
 ]
