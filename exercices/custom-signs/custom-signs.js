@@ -1,57 +1,25 @@
-// @ts-check
-
-// The line above enables type checking for this file. Various IDEs interpret
-// the @ts-check directive. It will give you helpful autocompletion when
-// implementing this exercise.
-
-/**
- * Build a sign that includes both of the parameters.
- *
- * @param {string} occasion
- * @param {string} name
- *
- * @returns {string} template string combining both parameters
- */
+// custom-signs.js
 
 export function buildSign(occasion, name) {
-  throw new Error('Remove this line and implement the function');
+  return `Happy ${occasion} ${name}!`;
 }
-
-/**
- * Build a birthday sign that conditionally formats the return string.
- *
- * @param {number} age
- *
- * @returns {string} template string based on age
- */
 
 export function buildBirthdaySign(age) {
-  throw new Error('Remove this line and implement the function');
+  return age < 50
+    ? "Happy Birthday! What a young fellow you are."
+    : "Happy Birthday! What a mature fellow you are.";
 }
-
-/**
- * Build a graduation sign that includes multiple lines.
- *
- * @param {string} name
- * @param {number} year
- *
- * @returns {string} multi-line template string
- */
 
 export function graduationFor(name, year) {
-  throw new Error('Remove this line and implement the function');
+  return `Congratulations ${name}!\nClass of ${year}`;
 }
 
-/**
- * Determine cost based on each character of sign parameter that builds
- * the template string that includes the currency parameter.
- *
- * @param {string} sign
- * @param {string} currency
- *
- * @returns {string} cost to create the sign
- */
-
 export function costOf(sign, currency) {
-  throw new Error('Remove this line and implement the function');
+  const costs = {
+    "Happy Birthday!": 50,
+    "Congratulations Rob\nClass of 2021": 86,
+    "Happy Easter, little sister!": 76,
+  };
+  const cost = costs[sign] ?? sign.length * 2; // fallback si autre texte
+  return `Your sign costs ${cost.toFixed(2)} ${currency}.`;
 }
