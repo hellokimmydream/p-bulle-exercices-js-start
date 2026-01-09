@@ -9,3 +9,7 @@
 - Globalement: il ne me semble pas réaliste d'espérer atteindre le niveau 50 en partant de là où vous êtes et avec le temps qu'il vous reste. Je vous invite néanmoins à ne pas baisser les bras en vue du prochain trimestre.
 
 -c'est bon j ai vu merci
+
+## Feedback dernier jour
+
+- Vous avez appris à résoudre les conflits Git
