@@ -9,25 +9,23 @@
 //const regexReste = (message) => /^[A-Za-z0-9.,!?-_çöéàäèü$+""" "%&()( )\d]?{1}$/.test(message);
 
 export const hey = (message) => {
-  if (!message.trim()) {
+  const messageTrim = message.trim();
+  if (isQuestion(messageTrim) && isUpperCase(messageTrim)) {
+    return "Calm down, I know what I'm doing!";
+  } else if (isQuestion(messageTrim)) {
+    return "Sure.";
+  } else if (
+    // isBlank pour nettoyer et controler que le message est vide donc silence vrais si vide
+    isBlank(messageTrim)
+  ) {
+    return "Fine. Be that way!";
+  } else if (isUpperCase(messageTrim)) {
+    return "Whoa, chill out!";
+  } else {
     return "Whatever.";
   }
-
-  const silence = (message) => /^\s*$/.test(message);
-  const shouting = (message) => /^[^A-Za-z]*[A-Z]+(?:[^a-z]*)$/.test(message);
-  const asking = (message) => /\?\s*$/.test(message);
-
-  if (asking(message)) {
-    return "Sure";
-  }
-
-  if (shouting(message)) {
-    return shouting(message)
-      ? "Whoa, chill out!"
-      : "Calm down, I know what I'm doing!";
-  }
-
-  if (silence(message)) {
-    return "Fine. Be that way!";
-  }
 };
+const isQuestion = (message) => message.endsWith("?");
+const isUpperCase = (message) =>
+  !/[a-z]/.test(message) && /[A-Z]/.test(message);
+const isBlank = (message) => message === "";
