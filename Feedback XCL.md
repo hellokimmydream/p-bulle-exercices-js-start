@@ -13,3 +13,7 @@
 ## Feedback dernier jour
 
 - Vous avez appris à résoudre les conflits Git
+
+## Final
+
+- Voir grille
